@@ -27,6 +27,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.Owl">
+        <!--android:theme="@android:style/Theme.NoTitleBar">-->
+
 
         <activity android:name="com.magicpixellabs.front.ActivitySplashScreen">
             <intent-filter>
@@ -34,7 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
 
         <activity android:name="com.magicpixellabs.front.login.ActivityLogin"/>
         <activity android:name="com.magicpixellabs.front.register.ActivityRegister"/>
