@@ -16,12 +16,10 @@
     <string name="text_hint_email">email</string>
     <string name="text_hint_password">password</string>
 
+
     <string name="hyperlink_terms">
         <a href="http://www.google.com">By clicking next, you agree to the terms and conditions.</a>
     </string>
 
-    <string name="api_path_users">users</string>
-    <string name="api_path_users">messages</string>
-    <string name="api_path_users">numbers</string>
 
 </resources>
