@@ -1,4 +1,4 @@
-package com.gregschier.front.register;
+package com.magicpixellabs.front.register;
 
 import android.app.Fragment;
 

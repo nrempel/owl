@@ -1,9 +1,9 @@
-package com.gregschier.front.login;
+package com.magicpixellabs.front.login;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import com.gregschier.simplesms.R;
+import com.magicpixellabs.simplesms.R;
 
 public class ActivityLogin extends Activity implements FragmentLogin.Callback {
 

@@ -1,4 +1,4 @@
-package com.gregschier.front.register;
+package com.magicpixellabs.front.register;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.gregschier.simplesms.R;
+import com.magicpixellabs.simplesms.R;
 
 public class FragmentRegister extends Fragment implements View.OnClickListener {
 

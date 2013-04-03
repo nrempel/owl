@@ -1,12 +1,12 @@
-package com.gregschier.front;
+package com.magicpixellabs.front;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import com.gregschier.front.login.ActivityLogin;
-import com.gregschier.front.register.ActivityRegister;
-import com.gregschier.simplesms.R;
+import com.magicpixellabs.front.login.ActivityLogin;
+import com.magicpixellabs.front.register.ActivityRegister;
+import com.magicpixellabs.simplesms.R;
 
 public class ActivitySplashScreen extends Activity implements View.OnClickListener {
 

@@ -1,11 +1,11 @@
-package com.gregschier.front.register;
+package com.magicpixellabs.front.register;
 
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import com.gregschier.simplesms.R;
+import com.magicpixellabs.simplesms.R;
 
-public class ActivityRegister extends Activity implements FragmentRegister.Callback{
+public class ActivityRegister extends Activity implements FragmentRegister.Callback {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

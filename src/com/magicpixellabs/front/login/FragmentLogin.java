@@ -1,4 +1,4 @@
-package com.gregschier.front.login;
+package com.magicpixellabs.front.login;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import com.gregschier.simplesms.R;
+import com.magicpixellabs.simplesms.R;
 
 public class FragmentLogin extends Fragment implements View.OnClickListener {
 
