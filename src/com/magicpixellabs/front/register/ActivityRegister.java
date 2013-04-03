@@ -3,7 +3,7 @@ package com.magicpixellabs.front.register;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import com.magicpixellabs.simplesms.R;
+import com.magicpixellabs.owl.R;
 
 public class ActivityRegister extends Activity implements FragmentRegister.Callback {
 

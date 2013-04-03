@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import com.magicpixellabs.front.login.ActivityLogin;
 import com.magicpixellabs.front.register.ActivityRegister;
-import com.magicpixellabs.simplesms.R;
+import com.magicpixellabs.owl.R;
 
 public class ActivitySplashScreen extends Activity implements View.OnClickListener {
 

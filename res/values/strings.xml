@@ -17,8 +17,8 @@
     <string name="text_hint_password">password</string>
 
 
-    <string name="hyperlink_terms">"<a href="http://www.google.com">By clicking next, you agree to the terms and
-        conditions.</a>"
+    <string name="hyperlink_terms">
+        <a href="http://www.google.com">By clicking next, you agree to the terms and conditions.</a>
     </string>
 
 
