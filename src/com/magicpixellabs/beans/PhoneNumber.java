@@ -1,6 +1,10 @@
 package com.magicpixellabs.beans;
 
-public class PhoneNumber {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@SuppressWarnings("unused")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PhoneNumber implements Bean {
 
     private String number;
     private String sid;
@@ -22,5 +26,10 @@ public class PhoneNumber {
 
     public void setSid(String sid) {
         this.sid = sid;
+    }
+
+    @Override
+    public String toJSON() {
+        return null;
     }
 }

@@ -1,13 +1,15 @@
 package com.magicpixellabs.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 
 @SuppressWarnings("unused")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class User implements Bean {
 
+    @JsonProperty("_id")
     private String id;
     private String country;
     private String email;
@@ -19,10 +21,12 @@ public class User {
     public User() {
     }
 
+    @JsonProperty("_id")
     public String getId() {
         return id;
     }
 
+    @JsonProperty("_id")
     public void setId(String id) {
         this.id = id;
     }
@@ -73,5 +77,10 @@ public class User {
 
     public void setDevices(ArrayList<Device> devices) {
         this.devices = devices;
+    }
+
+    @Override
+    public String toJSON() {
+        return null;
     }
 }

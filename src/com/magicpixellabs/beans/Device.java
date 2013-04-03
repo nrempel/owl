@@ -1,6 +1,10 @@
 package com.magicpixellabs.beans;
 
-public class Device {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@SuppressWarnings("unused")
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Device implements Bean {
 
     private String platform;
     private String pingId;
@@ -22,5 +26,10 @@ public class Device {
 
     public void setPingId(String pingId) {
         this.pingId = pingId;
+    }
+
+    @Override
+    public String toJSON() {
+        return null;
     }
 }

@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.magicpixellabs.simplesms.R;
+import com.magicpixellabs.owl.R;
 
 public class FragmentRegister extends Fragment implements View.OnClickListener {
 
