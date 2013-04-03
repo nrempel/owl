@@ -18,27 +18,46 @@ public class APIRequest implements Parcelable {
     ///////////////
     /* RESOURCES */
     ///////////////
-    public static final int RESOURCE_USERS      = 0;
-    public static final int RESOURCE_MESSAGES   = 1;
-    public static final int RESOURCE_NUMBERS    = 2;
+    public static final int RESOURCE_USERS = 0;
+    public static final int RESOURCE_MESSAGES = 1;
+    public static final int RESOURCE_NUMBERS = 2;
     private static final LinkedHashMap<Integer, String> RESOURCES = new LinkedHashMap<Integer, String>() {
-        {put(RESOURCE_USERS, "users");}
-        {put(RESOURCE_MESSAGES, "messages");}
-        {put(RESOURCE_NUMBERS, "numbers");}
+        {
+            put(RESOURCE_USERS, "users");
+        }
+
+        {
+            put(RESOURCE_MESSAGES, "messages");
+        }
+
+        {
+            put(RESOURCE_NUMBERS, "numbers");
+        }
     };
 
     /////////////
     /* ACTIONS */
     /////////////
-    public static final int ACTION_LOGIN            = 0;
-    public static final int ACTION_REGISTER_DEVICE  = 1;
-    public static final int ACTION_CHOOSE_NUMBER    = 2;
-    public static final int ACTION_AVAILABLE        = 3;
+    public static final int ACTION_LOGIN = 0;
+    public static final int ACTION_REGISTER_DEVICE = 1;
+    public static final int ACTION_CHOOSE_NUMBER = 2;
+    public static final int ACTION_AVAILABLE = 3;
     private static final LinkedHashMap<Integer, String> ACTIONS = new LinkedHashMap<Integer, String>() {
-        {put(ACTION_LOGIN, "login");}
-        {put(ACTION_REGISTER_DEVICE, "register_device");}
-        {put(ACTION_CHOOSE_NUMBER, "choose_number");}
-        {put(ACTION_AVAILABLE, "available");}
+        {
+            put(ACTION_LOGIN, "login");
+        }
+
+        {
+            put(ACTION_REGISTER_DEVICE, "register_device");
+        }
+
+        {
+            put(ACTION_CHOOSE_NUMBER, "choose_number");
+        }
+
+        {
+            put(ACTION_AVAILABLE, "available");
+        }
     };
 
     private final String resource;
@@ -96,9 +115,10 @@ public class APIRequest implements Parcelable {
         this.queryStrings = builder.queryStrings;
     }
 
-    public static class QueryString implements Parcelable{
+    public static class QueryString implements Parcelable {
 
-        public QueryString() {}
+        public QueryString() {
+        }
 
         String field;
         String value;
@@ -123,6 +143,7 @@ public class APIRequest implements Parcelable {
             public QueryString createFromParcel(Parcel in) {
                 return new QueryString(in);
             }
+
             public QueryString[] newArray(int size) {
                 return new QueryString[size];
             }
@@ -194,12 +215,21 @@ public class APIRequest implements Parcelable {
         }
     }
 
+    // Creator should use TelephonyManager.getNetworkCountryIso()
     public static class CountryParameter extends QueryString {
         public CountryParameter(String country) {
             this.field = "country=";
             this.value = country;
         }
     }
+
+    public static class LocationParameter extends QueryString {
+        public LocationParameter(double lat, double lon) {
+            this.field = "location=";
+            this.value = String.valueOf(lat) + "," + String.valueOf(lon);
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -209,7 +239,7 @@ public class APIRequest implements Parcelable {
         if (this.qualifier != null) qualifier = "/" + this.qualifier;
         if (queryStrings != null) {
             boolean first = true;
-            for (QueryString queryString: queryStrings) {
+            for (QueryString queryString : queryStrings) {
                 if (first) {
                     params += "?";
                     first = false;
@@ -234,8 +264,12 @@ public class APIRequest implements Parcelable {
     }
 
     public static class InvalidRequestException extends Exception {
-        public InvalidRequestException() {}
-        public InvalidRequestException(String message){super(message);}
+        public InvalidRequestException() {
+        }
+
+        public InvalidRequestException(String message) {
+            super(message);
+        }
     }
 
     //////////////////
@@ -259,6 +293,7 @@ public class APIRequest implements Parcelable {
         public APIRequest createFromParcel(Parcel in) {
             return new APIRequest(in);
         }
+
         public APIRequest[] newArray(int size) {
             return new APIRequest[size];
         }
