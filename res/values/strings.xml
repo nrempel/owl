@@ -1,0 +1,33 @@
+<resources>
+
+    <string name="app_name">The Messenger</string>
+    <string name="menu_new">New Message</string>
+    <string name="submit_message">Submit</string>
+    <string name="send_sms">Send Message</string>
+    <string name="avatar_description">Picture of Contact</string>
+    <string name="hint">Type Your Message</string>
+
+
+    <string name="title_activity_activity_message_list">The Messenger</string>
+    <string name="title_splash_screen">SMS</string>
+    <string name="title_login">LOG IN</string>
+    <string name="title_register">REGISTER</string>
+
+
+    <string name="button_text_log_in">LOG IN</string>
+    <string name="button_text_register">REGISTER</string>
+
+    <string name="text_forgot_password">forgot your password?</string>
+    <string name="text_login">LOG IN</string>
+
+    <string name="text_hint_email">email</string>
+    <string name="text_hint_password">password</string>
+    <string name="text_hint_first_name">first name</string>
+    <string name="edit_text_last_name">last name</string>
+
+    <string name="hyperlink_terms">
+        <a href="http://www.google.com">By clicking next, you agree to the terms and conditions.</a>
+    </string>
+
+
+</resources>
