@@ -16,7 +16,6 @@ public class APIResponse<E> {
     private long timestamp;
     private long millis;
 
-
     public APIResponse() {
     }
 
