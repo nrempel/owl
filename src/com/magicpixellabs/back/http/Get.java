@@ -25,6 +25,7 @@ public class Get extends BaseHttpTask {
     @Override
     protected String doInBackground(Void... v) {
         InputStream stream = null;
+        String result = null;
         try {
             HttpClient httpClient = new DefaultHttpClient();
             HttpGet get = new HttpGet(mAPIRequest.toString());
@@ -33,9 +34,10 @@ public class Get extends BaseHttpTask {
             if (response != null && response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 BufferedHttpEntity bufferedHttpEntity = new BufferedHttpEntity(response.getEntity());
                 stream = bufferedHttpEntity.getContent();
+                result = Helpers.streamToString(stream);
             } else {
                 if (response != null) {
-                    Log.e(TAG, "Network request returned with status code: " + response.getStatusLine().getStatusCode());
+                    Log.e(TAG, "Network request returned with status code " + response.getStatusLine().getStatusCode());
                 } else {
                     Log.e(TAG, "Network request failed.");
                 }
@@ -43,14 +45,6 @@ public class Get extends BaseHttpTask {
         } catch (IOException e) {
             Log.e(TAG, e.getMessage());
         }
-
-        String result = null;
-        try {
-            result = Helpers.streamToString(stream);
-        } catch (IOException e) {
-            Log.e(TAG, e.getMessage());
-        }
-
         return result;
     }
 

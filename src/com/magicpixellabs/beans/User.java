@@ -9,16 +9,51 @@ import java.util.ArrayList;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User implements Bean {
 
+    @SuppressWarnings("unused")
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public class Name {
+        private String first;
+        private String last;
+
+        public Name() {
+        }
+
+        public String getFirst() {
+            return first;
+        }
+
+        public void setFirst(String first) {
+            this.first = first;
+        }
+
+        public String getLast() {
+            return last;
+        }
+
+        public void setLast(String last) {
+            this.last = last;
+        }
+    }
+
     @JsonProperty("_id")
     private String id;
-    private String country;
+    private Name name;
     private String email;
     private String password;
     private String created;
+    private String token;
     private PhoneNumber phoneNumber;
     private ArrayList<Device> devices;
 
     public User() {
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     @JsonProperty("_id")
@@ -29,14 +64,6 @@ public class User implements Bean {
     @JsonProperty("_id")
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getEmail() {
