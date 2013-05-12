@@ -20,7 +20,7 @@ public class FragmentLogin extends Fragment implements View.OnClickListener, Tex
     Callback mCallback;
 
     interface Callback {
-        void onForgotSelected();
+        void onForgotSelected(String email);
 
         void onLoginSelected(String email, String pass);
     }
@@ -51,10 +51,11 @@ public class FragmentLogin extends Fragment implements View.OnClickListener, Tex
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.text_forgot:
-                mCallback.onForgotSelected();
+                String email = ((EditText) getView().findViewById(R.id.edit_email)).getText().toString();
+                mCallback.onForgotSelected(email);
                 break;
             case R.id.button_login:
-                String email = ((EditText) getView().findViewById(R.id.edit_email)).getText().toString();
+                email = ((EditText) getView().findViewById(R.id.edit_email)).getText().toString();
                 String pass = ((EditText) getView().findViewById(R.id.edit_password)).getText().toString();
                 String hashed = new String(Hex.encodeHex(DigestUtils.sha(pass)));
                 mCallback.onLoginSelected(email, hashed);
@@ -63,7 +64,6 @@ public class FragmentLogin extends Fragment implements View.OnClickListener, Tex
     }
 
     /* Ensure the user has typed something and that the email address is probably an email address  */
-
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
     }
@@ -87,6 +87,4 @@ public class FragmentLogin extends Fragment implements View.OnClickListener, Tex
         }
 
     }
-
-
 }

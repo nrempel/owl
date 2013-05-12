@@ -15,7 +15,8 @@ import com.magicpixellabs.beans.User;
 import com.magicpixellabs.owl.R;
 
 public class ActivityLogin extends Activity
-        implements FragmentLogin.Callback, BaseHttpTask.Callback {
+        implements FragmentLogin.Callback, FragmentForgotPassword.Callback,
+        BaseHttpTask.Callback {
 
     private static final String TAG = "ActivityLogin";
 
@@ -34,21 +35,24 @@ public class ActivityLogin extends Activity
     /* Callbacks */
 
     @Override
-    public void onForgotSelected() {
-
+    public void onForgotSelected(String email) {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, new FragmentForgotPassword());
+        fragmentTransaction.replace(R.id.fragment_container, new FragmentForgotPassword(email));
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
+    }
+
+
+    @Override
+    public void onRecoverSelected() {
 
     }
 
     @Override
-    public void onLoginSelected(String email, String pass) {
-
+    public void onLoginSelected(String email, String hashed) {
         APIRequest.EmailParameter emailParam = new APIRequest.EmailParameter(email);
-        APIRequest.PasswordParameter password = new APIRequest.PasswordParameter(pass);
+        APIRequest.PasswordParameter password = new APIRequest.PasswordParameter(hashed);
         try {
             APIRequest request = new APIRequest.Builder()
                     .resource(APIRequest.RESOURCE_USERS)
@@ -64,13 +68,10 @@ public class ActivityLogin extends Activity
         } catch (APIRequest.InvalidRequestException e) {
             Log.e(TAG, e.getMessage());
         }
-
     }
 
     @Override
     public void onHttpResult(APIResponse<Bean> response) {
-
         setProgressBarIndeterminateVisibility(false);
-
     }
 }

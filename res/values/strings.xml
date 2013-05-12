@@ -8,8 +8,9 @@
     <string name="button_text_log_in">@string/title_login</string>
     <string name="button_text_register">@string/title_register</string>
     <string name="button_next">Next</string>
+    <string name="button_recover">Recover</string>
 
-    <string name="text_forgot_password">forgot your password?</string>
+    <string name="text_recover_password">Recover your password</string>
     <string name="text_login">@string/title_login</string>
 
     <string name="text_hint_first_name">first name</string>
