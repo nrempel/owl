@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.magicpixellabs.owl.R;
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class FragmentRegister extends Fragment implements View.OnClickListener, TextWatcher {
 
@@ -20,7 +22,7 @@ public class FragmentRegister extends Fragment implements View.OnClickListener, 
     Callback mCallback;
 
     interface Callback {
-        void onNextSelected();
+        void onNextSelected(String first, String last, String email, String hashed);
     }
 
     @Override
@@ -73,11 +75,21 @@ public class FragmentRegister extends Fragment implements View.OnClickListener, 
         } else {
             button.setEnabled(false);
         }
-
     }
 
     @Override
     public void onClick(View v) {
-        mCallback.onNextSelected();
+
+        switch (v.getId()) {
+            case R.id.button_next:
+                EditText first = (EditText) getView().findViewById(R.id.edit_first_name);
+                EditText last = (EditText) getView().findViewById(R.id.edit_last_name);
+                EditText email = (EditText) getView().findViewById(R.id.edit_email);
+                EditText password = (EditText) getView().findViewById(R.id.edit_password);
+                String hashed = new String(Hex.encodeHex(DigestUtils.sha(password.toString())));
+                mCallback.onNextSelected(first.toString(), last.toString(),
+                        email.toString(), hashed);
+                break;
+        }
     }
 }
