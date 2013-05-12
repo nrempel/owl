@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/text_hint_first_name"
-        android:id="@+id/edit_name"
+        android:id="@+id/edit_first_name"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/text_hint_email"
-        android:id="@+id/editText"
+        android:id="@+id/edit_email"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
@@ -61,10 +61,10 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="@string/button_next"
         android:id="@+id/button_next"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:enabled="true"/>
+        android:enabled="false"/>
 </LinearLayout>

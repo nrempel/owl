@@ -7,6 +7,7 @@
 
     <string name="button_text_log_in">@string/title_login</string>
     <string name="button_text_register">@string/title_register</string>
+    <string name="button_next">Next</string>
 
     <string name="text_forgot_password">forgot your password?</string>
     <string name="text_login">@string/title_login</string>
@@ -20,6 +21,7 @@
     <string name="hyperlink_terms">
         <a href="http://www.google.com">By clicking next, you agree to the terms and conditions.</a>
     </string>
+
     <string name="splash_screen_backdrop">backdrop</string>
 
 
