@@ -12,7 +12,6 @@ public class ActivitySplashScreen extends Activity implements View.OnClickListen
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.Theme_Owl);
         setContentView(R.layout.splash_screen);
         getActionBar().setTitle(null);
 

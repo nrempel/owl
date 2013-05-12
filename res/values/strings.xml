@@ -20,6 +20,7 @@
     <string name="hyperlink_terms">
         <a href="http://www.google.com">By clicking next, you agree to the terms and conditions.</a>
     </string>
+    <string name="splash_screen_backdrop">backdrop</string>
 
 
 </resources>

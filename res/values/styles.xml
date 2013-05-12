@@ -1,5 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Owl" parent="android:Theme.Light"/>
+    <style name="Owl" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:buttonStyle">@style/owl_button</item>
+    </style>
+
+    <style name="owl_button" parent="android:Widget.Button">
+        <item name="android:background">@drawable/btn</item>
+    </style>
 
 </resources>
