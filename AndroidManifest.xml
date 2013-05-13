@@ -30,15 +30,18 @@
         <!--android:theme="@android:style/Theme.NoTitleBar">-->
 
 
-        <activity android:name="com.magicpixellabs.front.ActivitySplashScreen">
+        <activity android:name="com.magicpixellabs.front.ActivitySplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <activity android:name="com.magicpixellabs.front.login.ActivityLogin"/>
-        <activity android:name="com.magicpixellabs.front.register.ActivityRegister"/>
+        <activity android:name="com.magicpixellabs.front.login.ActivityLogin"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.magicpixellabs.front.register.ActivityRegister"
+            android:screenOrientation="portrait"/>
 
     </application>
 

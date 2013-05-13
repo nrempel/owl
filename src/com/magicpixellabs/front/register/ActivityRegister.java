@@ -14,7 +14,7 @@ import com.magicpixellabs.beans.User;
 import com.magicpixellabs.owl.R;
 
 public class ActivityRegister extends Activity implements FragmentRegister.Callback,
-        BaseHttpTask.Callback {
+        FragmentPickNumber.Callback, BaseHttpTask.Callback {
 
     private static final String TAG = "ActivityRegister";
 
@@ -60,7 +60,7 @@ public class ActivityRegister extends Activity implements FragmentRegister.Callb
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             fragmentTransaction.commit();
         } else {
-            // error
+            // TODO: error dialog
         }
     }
 }
