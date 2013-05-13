@@ -42,6 +42,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.magicpixellabs.front.register.ActivityRegister"
             android:screenOrientation="portrait"/>
+        <activity android:name="com.magicpixellabs.front.ActivityAccount"/>
+        <activity android:name="com.magicpixellabs.front.main.ActivityMain"/>
 
     </application>
 

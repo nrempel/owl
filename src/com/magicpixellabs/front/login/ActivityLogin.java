@@ -70,7 +70,10 @@ public class ActivityLogin extends Activity
     @Override
     public void onHttpResult(APIResponse<Bean> response) {
         setProgressBarIndeterminateVisibility(false);
+        if (response.isSuccess()) {
 
-        // launch actual app activity
+        } else {
+
+        }
     }
 }
