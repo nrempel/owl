@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @SuppressWarnings("unused")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PhoneNumber implements Bean {
+public class PhoneNumber extends Bean{
 
     private String number;
     private String sid;
@@ -26,10 +26,5 @@ public class PhoneNumber implements Bean {
 
     public void setSid(String sid) {
         this.sid = sid;
-    }
-
-    @Override
-    public String toJSON() {
-        return null;
     }
 }

@@ -86,9 +86,9 @@ public class FragmentRegister extends Fragment implements View.OnClickListener, 
                 EditText last = (EditText) getView().findViewById(R.id.edit_last_name);
                 EditText email = (EditText) getView().findViewById(R.id.edit_email);
                 EditText password = (EditText) getView().findViewById(R.id.edit_password);
-                String hashed = new String(Hex.encodeHex(DigestUtils.sha(password.toString())));
-                mCallback.onNextSelected(first.toString(), last.toString(),
-                        email.toString(), hashed);
+                String hashed = new String(Hex.encodeHex(DigestUtils.sha(password.getText().toString())));
+                mCallback.onNextSelected(first.getText().toString(), last.getText().toString(),
+                        email.getText().toString(), hashed);
                 break;
         }
     }

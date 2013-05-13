@@ -85,6 +85,5 @@ public class FragmentLogin extends Fragment implements View.OnClickListener, Tex
         } else {
             button.setEnabled(false);
         }
-
     }
 }

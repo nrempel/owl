@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @SuppressWarnings("unused")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Device implements Bean {
+public class Device extends Bean{
 
     private String platform;
     private String pingId;
@@ -26,10 +26,5 @@ public class Device implements Bean {
 
     public void setPingId(String pingId) {
         this.pingId = pingId;
-    }
-
-    @Override
-    public String toJSON() {
-        return null;
     }
 }

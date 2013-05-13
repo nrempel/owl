@@ -61,9 +61,7 @@ public class ActivityLogin extends Activity
                     .queryString(password)
                     .build();
             APICall.get(this, request, new TypeReference<APIResponse<User>>() {});
-
             setProgressBarIndeterminateVisibility(true);
-
         } catch (APIRequest.InvalidRequestException e) {
             Log.e(TAG, e.getMessage());
         }
@@ -72,5 +70,7 @@ public class ActivityLogin extends Activity
     @Override
     public void onHttpResult(APIResponse<Bean> response) {
         setProgressBarIndeterminateVisibility(false);
+
+        // launch actual app activity
     }
 }

@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 @SuppressWarnings("unused")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User implements Bean {
+public class User extends Bean{
 
     @SuppressWarnings("unused")
     @JsonIgnoreProperties(ignoreUnknown = true)
-    public class Name {
+    public static class Name {
         private String first;
         private String last;
 
@@ -106,8 +106,11 @@ public class User implements Bean {
         this.devices = devices;
     }
 
-    @Override
-    public String toJSON() {
-        return null;
+    public Name getName() {
+        return name;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
     }
 }
