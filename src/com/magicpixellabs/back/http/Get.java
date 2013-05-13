@@ -4,7 +4,6 @@ import android.util.Log;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.magicpixellabs.Helpers;
 import com.magicpixellabs.back.APIRequest;
-import com.magicpixellabs.beans.Bean;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
@@ -18,13 +17,13 @@ import java.io.InputStream;
 public class Get extends BaseHttpTask {
 
 
-    public Get(Callback callback, APIRequest apiRequest, TypeReference typeReference, Bean body) {
-        super(callback, apiRequest, typeReference, body);
+    public Get(Callback callback, APIRequest apiRequest, TypeReference typeReference) {
+        super(callback, apiRequest, typeReference);
     }
 
     @Override
     protected String doInBackground(Void... v) {
-        InputStream stream = null;
+        InputStream stream;
         String result = null;
         try {
             HttpClient httpClient = new DefaultHttpClient();

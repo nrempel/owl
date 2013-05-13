@@ -4,12 +4,13 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.magicpixellabs.back.http.*;
 import com.magicpixellabs.beans.Bean;
 
+@SuppressWarnings("unused")
 public class APICall {
 
     public static void get(BaseHttpTask.Callback callback, APIRequest apiRequest,
-                           TypeReference typeReference, Bean body) {
+                           TypeReference typeReference) {
 
-        new Get(callback, apiRequest, typeReference, body).execute();
+        new Get(callback, apiRequest, typeReference).execute();
 
     }
 
@@ -28,9 +29,9 @@ public class APICall {
     }
 
     public static void delete(BaseHttpTask.Callback callback, APIRequest apiRequest,
-                              TypeReference typeReference, Bean body) {
+                              TypeReference typeReference) {
 
-        new Delete(callback, apiRequest, typeReference, body).execute();
+        new Delete(callback, apiRequest, typeReference).execute();
 
     }
 }

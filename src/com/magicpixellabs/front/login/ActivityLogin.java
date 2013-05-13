@@ -60,8 +60,7 @@ public class ActivityLogin extends Activity
                     .queryString(emailParam)
                     .queryString(password)
                     .build();
-            APICall.get(this, request, new TypeReference<APIResponse<User>>() {
-            }, null);
+            APICall.get(this, request, new TypeReference<APIResponse<User>>() {});
 
             setProgressBarIndeterminateVisibility(true);
 

@@ -24,10 +24,14 @@ public abstract class BaseHttpTask extends AsyncTask<Void, Void, String> {
     private TypeReference mTypeReference;
     Bean mBody;
 
-    public BaseHttpTask(Callback callback, APIRequest apiRequest, TypeReference typeReference, Bean body) {
+    public BaseHttpTask(Callback callback, APIRequest apiRequest, TypeReference typeReference) {
         mCallback = callback;
         mAPIRequest = apiRequest;
         mTypeReference = typeReference;
+    }
+
+    public BaseHttpTask(Callback callback, APIRequest apiRequest, TypeReference typeReference, Bean body) {
+        this(callback, apiRequest, typeReference);
         mBody = body;
     }
 
