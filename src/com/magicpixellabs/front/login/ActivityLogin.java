@@ -1,17 +1,22 @@
 package com.magicpixellabs.front.login;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.magicpixellabs.Dialogs;
 import com.magicpixellabs.back.APICall;
 import com.magicpixellabs.back.APIRequest;
 import com.magicpixellabs.back.http.BaseHttpTask;
-import com.magicpixellabs.beans.APIResponse;
-import com.magicpixellabs.beans.Bean;
-import com.magicpixellabs.beans.User;
+import com.magicpixellabs.front.main.ActivityMain;
+import com.magicpixellabs.models.beans.APIResponse;
+import com.magicpixellabs.models.beans.Bean;
+import com.magicpixellabs.models.beans.User;
 import com.magicpixellabs.owl.R;
 
 public class ActivityLogin extends Activity
@@ -27,8 +32,14 @@ public class ActivityLogin extends Activity
         setProgressBarIndeterminateVisibility(false);
         getActionBar().setTitle(R.string.title_login);
 
+        Account[] accounts = AccountManager.get(this).getAccountsByType("com.google");
+        String email = "";
+        if (accounts.length > 0) {
+            email = accounts[0].name;
+        }
+
         getFragmentManager().beginTransaction().
-                replace(R.id.fragment_container, new FragmentLogin()).
+                replace(R.id.fragment_container, new FragmentLogin(email)).
                 commit();
     }
 
@@ -71,9 +82,9 @@ public class ActivityLogin extends Activity
     public void onHttpResult(APIResponse<Bean> response) {
         setProgressBarIndeterminateVisibility(false);
         if (response.isSuccess()) {
-
+            startActivity(new Intent(this, ActivityMain.class));
         } else {
-
+            Dialogs.showErrorDialog(this, response.getError()).show();
         }
     }
 }

@@ -4,7 +4,7 @@ import android.util.Log;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.magicpixellabs.Helpers;
 import com.magicpixellabs.back.APIRequest;
-import com.magicpixellabs.beans.Bean;
+import com.magicpixellabs.models.beans.Bean;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;

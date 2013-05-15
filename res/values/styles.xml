@@ -2,11 +2,22 @@
 <resources>
 
     <style name="Owl" parent="android:Theme.Holo.Light.DarkActionBar">
-        <item name="android:buttonStyle">@style/owl_button</item>
+        <item name="android:buttonStyle">@style/OwlButton</item>
+        <item name="android:windowBackground">@drawable/background</item>
+        <item name="android:listViewStyle">@style/TransparentListView</item>
+        <item name="android:expandableListViewStyle">@style/TransparentExpandableListView</item>
     </style>
 
-    <style name="owl_button" parent="android:Widget.Button">
+    <style name="OwlButton" parent="android:Widget.Holo.Light.Button">
         <item name="android:background">@drawable/btn</item>
+    </style>
+
+    <style name="TransparentListView" parent="@android:style/Widget.ListView">
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+    </style>
+
+    <style name="TransparentExpandableListView" parent="@android:style/Widget.ExpandableListView">
+        <item name="android:cacheColorHint">@android:color/transparent</item>
     </style>
 
 </resources>

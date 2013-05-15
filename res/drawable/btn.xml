@@ -1,16 +1,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_window_focused="false" android:state_enabled="true"
-          android:drawable="@drawable/btn_default_normal"/>
+          android:drawable="@drawable/btn_default_normal_holo"/>
     <item android:state_window_focused="false" android:state_enabled="false"
-          android:drawable="@drawable/btn_default_normal_disable"/>
+          android:drawable="@drawable/btn_default_disabled_holo"/>
     <item android:state_pressed="true"
-          android:drawable="@drawable/btn_default_pressed"/>
-    <item android:state_focused="true" android:state_enabled="true"
-          android:drawable="@drawable/btn_default_selected"/>
+          android:drawable="@drawable/btn_default_pressed_holo"/>
     <item android:state_enabled="true"
-          android:drawable="@drawable/btn_default_normal"/>
-    <item android:state_focused="true"
-          android:drawable="@drawable/btn_default_normal_disable_focused"/>
+          android:drawable="@drawable/btn_default_normal_holo"/>
     <item
-        android:drawable="@drawable/btn_default_normal_disable"/>
+        android:drawable="@drawable/btn_default_disabled_holo"/>
 </selector>

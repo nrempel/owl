@@ -11,6 +11,16 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/text_hint_email"
+        android:id="@+id/edit_email"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/text_hint_first_name"
         android:id="@+id/edit_first_name"
         android:layout_gravity="center_horizontal"
@@ -27,16 +37,6 @@
         android:layout_marginBottom="5dp"
         android:layout_gravity="center_horizontal"
         android:inputType="textCapWords"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/text_hint_email"
-        android:id="@+id/edit_email"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:inputType="textEmailAddress"/>
 
     <EditText
         android:layout_width="match_parent"

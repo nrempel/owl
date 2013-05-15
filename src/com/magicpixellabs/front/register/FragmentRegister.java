@@ -37,6 +37,14 @@ public class FragmentRegister extends Fragment implements View.OnClickListener, 
     }
     /* END Callback magic */
 
+    private String mEmail;
+
+    public FragmentRegister() {}
+
+    public FragmentRegister(String email) {
+        mEmail = email;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.register_main, container, false);
@@ -49,7 +57,14 @@ public class FragmentRegister extends Fragment implements View.OnClickListener, 
         return v;
     }
 
-        /* Ensure the user has typed something and that the email address is probably an email address  */
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        EditText email = ((EditText) view.findViewById(R.id.edit_email));
+        email.setText(mEmail);
+    }
+
+    /* Ensure the user has typed something and that the email address is probably an email address  */
 
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {

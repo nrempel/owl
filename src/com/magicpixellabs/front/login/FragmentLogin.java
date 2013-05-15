@@ -37,6 +37,14 @@ public class FragmentLogin extends Fragment implements View.OnClickListener, Tex
     }
     /* END Callback magic */
 
+    private String mEmail;
+
+    public FragmentLogin() {}
+
+    public FragmentLogin(String email) {
+        mEmail = email;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.login_main, container, false);
@@ -45,6 +53,13 @@ public class FragmentLogin extends Fragment implements View.OnClickListener, Tex
         v.findViewById(R.id.text_forgot).setOnClickListener(this);
         v.findViewById(R.id.button_login).setOnClickListener(this);
         return v;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        EditText email = ((EditText) view.findViewById(R.id.edit_email));
+        email.setText(mEmail);
     }
 
     @Override

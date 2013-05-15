@@ -2,7 +2,7 @@ package com.magicpixellabs.back;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.magicpixellabs.back.http.*;
-import com.magicpixellabs.beans.Bean;
+import com.magicpixellabs.models.beans.Bean;
 
 @SuppressWarnings("unused")
 public class APICall {

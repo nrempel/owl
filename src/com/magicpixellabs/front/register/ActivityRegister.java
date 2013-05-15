@@ -1,16 +1,19 @@
 package com.magicpixellabs.front.register;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.magicpixellabs.Dialogs;
 import com.magicpixellabs.back.APICall;
 import com.magicpixellabs.back.APIRequest;
 import com.magicpixellabs.back.http.BaseHttpTask;
-import com.magicpixellabs.beans.APIResponse;
-import com.magicpixellabs.beans.Bean;
-import com.magicpixellabs.beans.User;
+import com.magicpixellabs.models.beans.APIResponse;
+import com.magicpixellabs.models.beans.Bean;
+import com.magicpixellabs.models.beans.User;
 import com.magicpixellabs.owl.R;
 
 public class ActivityRegister extends Activity implements FragmentRegister.Callback,
@@ -23,8 +26,14 @@ public class ActivityRegister extends Activity implements FragmentRegister.Callb
         setContentView(R.layout.register_container);
         getActionBar().setTitle(R.string.title_register);
 
+        Account[] accounts = AccountManager.get(this).getAccountsByType("com.google");
+        String email = "";
+        if (accounts.length > 0) {
+            email = accounts[0].name;
+        }
+
         getFragmentManager().beginTransaction().
-                replace(R.id.fragment_container, new FragmentRegister()).
+                replace(R.id.fragment_container, new FragmentRegister(email)).
                 commit();
     }
 
@@ -60,7 +69,7 @@ public class ActivityRegister extends Activity implements FragmentRegister.Callb
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             fragmentTransaction.commit();
         } else {
-            // TODO: error dialog
+            Dialogs.showErrorDialog(this, response.getError()).show();
         }
     }
 }

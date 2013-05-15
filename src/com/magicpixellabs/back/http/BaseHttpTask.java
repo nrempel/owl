@@ -5,8 +5,8 @@ import android.util.Log;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.magicpixellabs.back.APIRequest;
-import com.magicpixellabs.beans.APIResponse;
-import com.magicpixellabs.beans.Bean;
+import com.magicpixellabs.models.beans.APIResponse;
+import com.magicpixellabs.models.beans.Bean;
 
 import java.io.IOException;
 

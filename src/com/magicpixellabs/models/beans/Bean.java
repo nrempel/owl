@@ -1,4 +1,4 @@
-package com.magicpixellabs.beans;
+package com.magicpixellabs.models.beans;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
